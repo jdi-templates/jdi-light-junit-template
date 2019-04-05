@@ -33,5 +33,6 @@ public class Preconditions {
     public static void logout() {
         userIcon.click();
         logout.click();
+        userIcon.click();
     }
 }

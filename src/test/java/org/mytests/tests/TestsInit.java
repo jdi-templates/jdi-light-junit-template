@@ -11,8 +11,10 @@ import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static org.mytests.uiobjects.example.site.SiteJdi.homePage;
 
 public class TestsInit {
+    private static boolean alreadyInitialized = false;
     @BeforeAll
     public static void setUp() {
+        if (alreadyInitialized)  { alreadyInitialized = false; return; }
         logger.setLogLevel(STEP);
         initElements(SiteJdi.class);
         homePage.open();
@@ -21,6 +23,6 @@ public class TestsInit {
 
     @AfterAll
     public static void teardown() {
-        killAllSeleniumDrivers();
+        /*killAllSeleniumDrivers();*/
     }
 }

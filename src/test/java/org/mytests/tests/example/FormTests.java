@@ -2,9 +2,9 @@ package org.mytests.tests.example;
 
 import org.junit.jupiter.api.Test;
 import org.mytests.tests.TestsInit;
-import org.mytests.tests.preconditions.Preconditions;
 
-import static org.mytests.tests.preconditions.Preconditions.*;
+import static org.mytests.tests.preconditions.Preconditions.shouldBeLoggedIn;
+import static org.mytests.tests.preconditions.Preconditions.shouldBeLoggedOut;
 import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_CONTACT;
 import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_USER;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;

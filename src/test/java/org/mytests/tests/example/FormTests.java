@@ -3,17 +3,16 @@ package org.mytests.tests.example;
 import org.junit.jupiter.api.Test;
 import org.mytests.tests.TestsInit;
 
-import static org.mytests.tests.preconditions.Preconditions.shouldBeLoggedIn;
-import static org.mytests.tests.preconditions.Preconditions.shouldBeLoggedOut;
+import static org.mytests.tests.states.States.*;
 import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_CONTACT;
 import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_USER;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
 import static org.mytests.uiobjects.example.site.pages.ContactFormPage.contactForm;
 
-public class FormTests extends TestsInit {
+class FormTests extends TestsInit {
 
     @Test
-    public void loginTest() {
+    void loginTest() {
         shouldBeLoggedOut();
         userIcon.click();
         loginForm.loginAs(DEFAULT_USER);
@@ -21,7 +20,7 @@ public class FormTests extends TestsInit {
     }
 
     @Test
-    public void fillContactFormTest() {
+    void fillContactFormTest() {
         shouldBeLoggedIn();
         contactFormPage.shouldBeOpened();
         contactForm.submit(DEFAULT_CONTACT);
@@ -29,7 +28,7 @@ public class FormTests extends TestsInit {
     }
 
     @Test
-    public void fillContactsTest() {
+    void fillContactsTest() {
         shouldBeLoggedIn();
         contactsPage.shouldBeOpened();
         contactsPage.asForm().submit(DEFAULT_CONTACT);

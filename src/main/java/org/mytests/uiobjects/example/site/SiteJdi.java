@@ -3,8 +3,6 @@ package org.mytests.uiobjects.example.site;
 import com.epam.jdi.light.elements.base.UIElement;
 import com.epam.jdi.light.elements.complex.JList;
 import com.epam.jdi.light.elements.composite.Form;
-import com.epam.jdi.light.elements.pageobjects.annotations.Title;
-import com.epam.jdi.light.elements.pageobjects.annotations.Url;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.Css;
 import com.epam.jdi.light.elements.pageobjects.annotations.simple.UI;
 import com.epam.jdi.light.ui.html.complex.Menu;
@@ -13,7 +11,7 @@ import org.mytests.uiobjects.example.site.custom.MenuItem;
 import org.mytests.uiobjects.example.site.pages.*;
 import org.openqa.selenium.WebElement;
 
-//@JSite("https://epam.github.io/JDI/")
+//@JSite("https://jdi-testing.github.io/jdi-light/")
 public class SiteJdi {
     public static HomePage homePage;
     public static JDIPerformancePage performancePage;

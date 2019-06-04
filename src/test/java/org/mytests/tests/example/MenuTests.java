@@ -2,16 +2,15 @@ package org.mytests.tests.example;
 
 import org.junit.jupiter.api.Test;
 import org.mytests.tests.TestsInit;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mytests.tests.preconditions.Preconditions.shouldBeLoggedIn;
+import static org.mytests.tests.states.States.*;
 import static org.mytests.uiobjects.example.entities.LeftMenuData.*;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
 
-public class MenuTests extends TestsInit {
+class MenuTests extends TestsInit {
 
     @Test
-    public void menuTest() {
+    void menuTest() {
         shouldBeLoggedIn();
         homePage.shouldBeOpened();
         leftMenu.select(Service, Dates);
@@ -20,7 +19,7 @@ public class MenuTests extends TestsInit {
         html5Page.checkOpened();
     }
     @Test
-    public void customMenuTest() {
+    void customMenuTest() {
         shouldBeLoggedIn();
         homePage.shouldBeOpened();
         menu.select(ContactForm);

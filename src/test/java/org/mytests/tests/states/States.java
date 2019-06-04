@@ -41,6 +41,7 @@ public class States {
             userIcon.click();
         }
         logout.click();
-        userIcon.click();
+        if (loginForm.displayed())
+            userIcon.click();
     }
 }

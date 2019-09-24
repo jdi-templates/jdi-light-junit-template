@@ -1,9 +1,12 @@
 package org.mytests.tests.example;
 
+import com.epam.jdi.light.elements.composite.Form;
 import org.junit.jupiter.api.Test;
 import org.mytests.tests.TestsInit;
+import org.mytests.uiobjects.example.entities.Contacts;
 
-import static org.mytests.tests.states.States.*;
+import static org.mytests.tests.states.States.shouldBeLoggedIn;
+import static org.mytests.tests.states.States.shouldBeLoggedOut;
 import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_CONTACT;
 import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_USER;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
@@ -31,7 +34,8 @@ class FormTests extends TestsInit {
     void fillContactsTest() {
         shouldBeLoggedIn();
         contactsPage.shouldBeOpened();
-        contactsPage.asForm().submit(DEFAULT_CONTACT);
-        contactsPage.asForm().check(DEFAULT_CONTACT);
+        Form<Contacts> contactFrom = contactsPage.asForm();
+        contactFrom.submit(DEFAULT_CONTACT);
+        contactFrom.check(DEFAULT_CONTACT);
     }
 }

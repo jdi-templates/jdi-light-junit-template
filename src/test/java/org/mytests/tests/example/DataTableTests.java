@@ -1,90 +1,141 @@
 package org.mytests.tests.example;
 
-import org.junit.jupiter.api.Test;
+import com.epam.jdi.light.elements.complex.table.Single;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mytests.tests.TestsInit;
 import org.mytests.uiobjects.example.entities.MarvelUserInfo;
-import org.mytests.uiobjects.example.site.custom.MarvelUser;
 
 import java.util.List;
 
+import static com.epam.jdi.light.elements.complex.table.Column.inColumn;
+import static com.epam.jdi.light.elements.complex.table.TableMatcher.containsValue;
+import static com.epam.jdi.light.elements.complex.table.TableMatcher.hasValue;
+import static com.epam.jdi.tools.StringUtils.LINE_BREAK;
 import static java.util.Arrays.asList;
-import static org.hamcrest.Matchers.*;
+import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.lessThanOrEqualTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mytests.tests.states.States.shouldBeLoggedIn;
-import static org.mytests.uiobjects.example.TestData.SPIDER_MAN;
+import static org.mytests.tests.test.data.MarvelHeroes.SPIDER_MAN;
 import static org.mytests.uiobjects.example.site.SiteJdi.usersPage;
-import static org.mytests.uiobjects.example.site.pages.UsersPage.users;
-import static org.mytests.uiobjects.example.site.pages.UsersPage.usersSetup;
+import static org.mytests.uiobjects.example.site.pages.UsersPage.*;
 
 class DataTableTests extends TestsInit {
+    private boolean firstTime = true;
     @BeforeEach
     void before() {
         shouldBeLoggedIn();
-        usersPage.open();
+        usersPage.shouldBeOpened();
+        if (firstTime) {
+            usersPage.open();
+            firstTime = false;
+        }
     }
 
     @Test
-    void dataTableTest() {
+    void tableParamsTest() {
         assertEquals(users.size(), 4);
         assertEquals(users.count(), 6);
         assertEquals(users.header(), asList("Number", "Type", "User", "Description"));
+    }
 
+    @Test
+    void previewTest() {
         String value = users.preview();
+        assertEquals(value.replaceAll(" ", ""),
+            "NumberTypeUserDescription1AdminUserManagerRomanWolverineVip2AdminUserManagerSergeyIvanSpiderManVip3AdminUserManagerVladzimirPunisherVip4AdminUserManagerHelenBennettCaptainAmericasomedescriptionVip5AdminUserManagerYoshiTannamuriCyclopesomedescriptionVip6AdminUserManagerGiovanniRovelliHulksomedescriptionVip");
+    }
+
+    @Test
+    void valueTest() {
+        String value = users.getValue();
         assertEquals(value,
-                "Number Type User Description1  Admin User Manager RomanWolverineVip2  Admin User Manager Sergey IvanSpider ManVip3  Admin User Manager VladzimirPunisherVip4  Admin User Manager Helen BennettCaptain Americasome descriptionVip5  Admin User Manager Yoshi TannamuriCyclopesome descriptionVip6  Admin User Manager Giovanni RovelliHulksome descriptionVip");
-        value = users.getValue();
-        assertEquals(value,
-        "||X||Number|Type|User|Description||\r\n" +
-            "||1||1|Admin|Roman|Wolverine:VIP||\r\n" +
-            "||2||2|User|Sergey Ivan|Spider Man:Dude||\r\n" +
-            "||3||3|Manager|Vladzimir|Punisher:VIP||\r\n" +
-            "||4||4|User|Helen Bennett|Captain America\\nsome description:Dude||\r\n" +
-            "||5||5|User|Yoshi Tannamuri|Cyclope\\nsome description:Dude||\r\n" +
-            "||6||6|User|Giovanni Rovelli|Hulk\\nsome description:Dude||\r\n");
+        "||X||Number|Type|User|Description||" + LINE_BREAK +
+            "||1||1|Admin|Roman|Wolverine:VIP||" + LINE_BREAK +
+            "||2||2|User|Sergey Ivan|Spider Man:Dude||" + LINE_BREAK +
+            "||3||3|Manager|Vladzimir|Punisher:VIP||" + LINE_BREAK +
+            "||4||4|User|Helen Bennett|Captain America\\nsome description:Dude||" + LINE_BREAK +
+            "||5||5|User|Yoshi Tannamuri|Cyclope\\nsome description:Dude||" + LINE_BREAK +
+            "||6||6|User|Giovanni Rovelli|Hulk\\nsome description:Dude||" + LINE_BREAK);
     }
     @Test
-    void filterDataTest() {
+    void dataColumnTestIndex() {
         assertEquals(users.data(2), SPIDER_MAN);
+    }
+    @Test
+    void dataColumnNameTest() {
         assertEquals(usersSetup.data("Sergey Ivan"), SPIDER_MAN);
+    }
+    @Test
+    void dataFilterTest() {
         assertEquals(users.data(d -> d.user.contains("Ivan")), SPIDER_MAN);
-
+    }
+    @Test
+    void allDataFilterTest() {
         List<MarvelUserInfo> filteredData = users.datas(d -> d.user.contains("Ivan"));
         assertEquals(filteredData.size(), 1);
         assertEquals(filteredData.get(0), SPIDER_MAN);
     }
     @Test
-    void tableAssertsTest() {
-        users.is().displayed().size(6);
+    void commonMatchersTest() {
+        users.is().displayed();
+        users.has().size(6);
         users.assertThat().size(greaterThan(3));
-        users.is().size(lessThanOrEqualTo(6))
-            .notEmpty().row(d -> d.user.contains("Ivan"));
-        users.assertThat().all().rows(d -> d.user.length() > 4);
-        users.has().atLeast(3).rows(d -> d.type.contains("User"))
-            .and().exact(2).rows(d -> d.description.contains(":VIP"));
+        users.is().notEmpty().size(lessThanOrEqualTo(6));
+    }
+    // Compare Matchers
+    @Test
+    void rowMatcherTest() {
+        users.has().row(d -> d.user.contains("Ivan"));
+    }
+    @Test
+    void rowDataMatcherTest() {
         users.has().row(SPIDER_MAN);
+    }
+    @Test
+    void rowTableMatcherSingleTest() {
+        users.has().rowThat(Single.hasValue("Sergey Ivan"), inColumn("User"));
+    }
+    @Test
+    void rowTableMatcherTest() {
+        users.has().rowThat(containsValue("User", inColumn("Type")),
+                hasValue("Sergey Ivan", inColumn("User")));
+    }
+    @Test
+    void rowsAllTest() {
+        users.assertThat().all().rows(d -> d.user.length() > 4);
+    }
+    @Test
+    void noRowsTest() {
+        users.assertThat().no().rows(d -> isBlank(d.user));
+    }
+    @Test
+    void atLeastTest() {
+        users.assertThat().atLeast(3).rows(d -> d.type.contains("User"));
+    }
+    @Test
+    void exactMatcherTest() {
+        users.assertThat().exact(2).rows(d -> d.description.contains(":VIP"));
+    }
+    @Test
+    void rowDataExactMatcherTest() {
         users.assertThat().exact(1).rows(SPIDER_MAN);
     }
+    //
+
 
     @Test
-    void filterLinesTest() {
-        MarvelUser line = users.line(2);
-        validateUserRow(line);
-        line = usersSetup.line("Sergey Ivan");
-        validateUserRow(line);
-        line =  users.line(d -> d.user.contains("Ivan"));
-        validateUserRow(line);
-
-        List<MarvelUser> filteredData = users.lines(d -> d.user.contains("Ivan"));
-        assertEquals(filteredData.size(), 1);
-        validateUserRow(filteredData.get(0));
-        usersPage.open();
-    }
-
-    private void validateUserRow(MarvelUser line) {
-        line.type.select("Admin");
-        assertEquals(line.type.getValue(), "Admin");
-        line.type.select("User");
-        line.number.assertThat().text(is("2"));
+    void tableChainTest() {
+        users.assertThat()
+            .displayed().size(6).size(greaterThan(3)).notEmpty()
+            .row(d -> d.user.contains("Ivan"))
+            .all().rows(d -> d.user.length() > 4)
+            .no().rows(d -> isBlank(d.user))
+            .atLeast(3).rows(d -> d.type.contains("User"))
+            .and().row(SPIDER_MAN)
+            .exact(2).rows(d -> d.description.contains(":VIP"))
+            .exact(1).rows(SPIDER_MAN);
     }
 }

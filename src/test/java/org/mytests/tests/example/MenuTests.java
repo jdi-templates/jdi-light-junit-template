@@ -2,8 +2,9 @@ package org.mytests.tests.example;
 
 import org.junit.jupiter.api.Test;
 import org.mytests.tests.TestsInit;
+import org.mytests.tests.states.States;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mytests.tests.states.States.*;
 import static org.mytests.uiobjects.example.entities.LeftMenuData.*;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
 
@@ -11,7 +12,7 @@ class MenuTests extends TestsInit {
 
     @Test
     void menuTest() {
-        shouldBeLoggedIn();
+        States.shouldBeLoggedIn();
         homePage.shouldBeOpened();
         leftMenu.select(Service, Dates);
         datesPage.checkOpened();
@@ -20,7 +21,7 @@ class MenuTests extends TestsInit {
     }
     @Test
     void customMenuTest() {
-        shouldBeLoggedIn();
+        States.shouldBeLoggedIn();
         homePage.shouldBeOpened();
         menu.select(ContactForm);
         assertEquals(menu.selected(), ContactForm.value);

@@ -2,13 +2,13 @@ package org.mytests.tests.example;
 
 import com.epam.jdi.light.elements.complex.table.Line;
 import org.apache.commons.lang3.time.StopWatch;
-import org.apache.logging.log4j.core.util.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mytests.tests.TestsInit;
 
 import static com.epam.jdi.light.elements.complex.table.Column.inColumn;
 import static com.epam.jdi.light.elements.complex.table.TableMatcher.containsValue;
+import static com.epam.jdi.light.elements.complex.table.TableMatcher.hasValue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mytests.tests.states.States.shouldBeLoggedIn;
 import static org.mytests.uiobjects.example.TestData.TABLE_SNAPSHOOT;
@@ -28,12 +28,16 @@ class JDIPerformanceTests extends TestsInit {
         usersTable.assertThat().rowThat(
             containsValue("Meyer", inColumn("Name")),
             containsValue("co.uk", inColumn("Email")));
+        usersTable.assertThat().no().rows(
+            hasValue("NO_NAME", inColumn("Name")),
+            hasValue("wrong.email", inColumn("Email")));
 
         StopWatch timer = StopWatch.createStarted();
         Line row = usersTable.row(
             containsValue("Meyer", inColumn("Name")),
             containsValue("co.uk", inColumn("Email")));
         System.out.println("Huge table search test Time: " + timer.getTime());
+
         assertEquals(row.getValue(),
         "Brian Meyer;(016977) 0358;mollis.nec@seddictumeleifend.co.uk;Houston");
     }
@@ -47,7 +51,7 @@ class JDIPerformanceTests extends TestsInit {
     }
 
     @Test
-    void bigDropdownTest() {
+    public void bigDropdownTest() {
         String name = "Charles Byers";
         StopWatch timer = StopWatch.createStarted();
         userNames.select(name);
@@ -56,7 +60,7 @@ class JDIPerformanceTests extends TestsInit {
     }
 
     @Test
-    void longTextTest() {
+    public void longTextTest() {
         String text = "Lorem ipsum dolor sit amet, eos numquam rationibus ad. Ius cu accumsan salutatus, ne pro purto ridens vulputate. Cu eum doctus tritani, munere sanctus complectitur vis id. Paulo vulputate te eos, suas tollit laudem nam id. His esse rebum reprimique ut, te solum atqui homero vim.\\n\\n" +
                 "Labitur salutatus eos an. Vim ut dicam fuisset. Ex sed animal accommodare, utinam graeci iisque vim id, ea fugit scripta deleniti nec. Eos cu nisl veri meis. Affert audiam copiosae mel ne, fabulas menandri temporibus has et. Sed latine graecis ei, eu fugit soluta intellegam vis, nibh graeci meliore ad duo.\\n\\n" +
                 "Et quis meis delenit mea, ius ea sumo laboramus vituperatoribus. Te simul luptatum tractatos nam, eam in causae constituam, quod stet ancillae nam ei. Ne his dico veniam legere, id has vidisse euismod sanctus. Vis putant volumus tincidunt et.\\n\\n" +

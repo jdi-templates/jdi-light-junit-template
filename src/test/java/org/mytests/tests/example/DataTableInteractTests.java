@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.mytests.tests.TestsInit;
 import org.mytests.uiobjects.example.custom.MarvelUser;
 
-
 import java.util.List;
 
 import static org.hamcrest.Matchers.is;
@@ -50,5 +49,4 @@ class DataTableInteractTests extends TestsInit {
         line.type.select("User");
         line.number.assertThat().text(is("2"));
     }
-
 }

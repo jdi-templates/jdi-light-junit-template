@@ -45,14 +45,14 @@ class DataTableTests extends TestsInit {
     void previewTest() {
         String value = users.preview();
         assertEquals(value.replaceAll(" ", ""),
-            "NumberTypeUserDescription1AdminUserManagerRomanWolverineVip2AdminUserManagerSergeyIvanSpiderManVip3AdminUserManagerVladzimirPunisherVip4AdminUserManagerHelenBennettCaptainAmericasomedescriptionVip5AdminUserManagerYoshiTannamuriCyclopesomedescriptionVip6AdminUserManagerGiovanniRovelliHulksomedescriptionVip");
+                "NumberTypeUserDescription1AdminUserManagerRomanWolverineVip2AdminUserManagerSergeyIvanSpiderManVip3AdminUserManagerVladzimirPunisherVip4AdminUserManagerHelenBennettCaptainAmericasomedescriptionVip5AdminUserManagerYoshiTannamuriCyclopesomedescriptionVip6AdminUserManagerGiovanniRovelliHulksomedescriptionVip");
     }
 
     @Test
     void valueTest() {
         String value = users.getValue();
         assertEquals(value,
-        "||X||Number|Type|User|Description||" + LINE_BREAK +
+    "||X||Number|Type|User|Description||" + LINE_BREAK +
             "||1||1|Admin|Roman|Wolverine:VIP||" + LINE_BREAK +
             "||2||2|User|Sergey Ivan|Spider Man:Dude||" + LINE_BREAK +
             "||3||3|Manager|Vladzimir|Punisher:VIP||" + LINE_BREAK +
@@ -123,7 +123,6 @@ class DataTableTests extends TestsInit {
     void rowDataExactMatcherTest() {
         users.assertThat().exact(1).rows(SPIDER_MAN);
     }
-    //
 
 
     @Test

@@ -13,9 +13,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <driver>chrome</driver>
         <domain>https://jdi-testing.github.io/jdi-light/</domain>
-        <allure.version>2.6.0</allure.version>
+        <allure.version>2.7.0</allure.version>
         <allure.maven.version>2.9</allure.maven.version>
-        <surfire.version>2.19.1</surfire.version>
+        <surfire.version>2.22.1</surfire.version>
     </properties>
 
     <dependencies>
@@ -35,24 +35,16 @@
             <artifactId>allure-junit5</artifactId>
             <version>${allure.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.4.0</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
-        <testResources>
-            <testResource>
-                <directory>src/test/resources</directory>
-                <filtering>false</filtering>
-            </testResource>
-        </testResources>
         <plugins>
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>${allure.maven.version}</version>
-                <configuration>
-                    <reportDirectory>target/allure-report</reportDirectory>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -68,13 +60,20 @@
                 <version>${surfire.version}</version>
                 <configuration>
                     <systemProperties>
-                        <allure.results.directory>target/allure-results</allure.results.directory>
-                        <property>
-                            <name>junit.jupiter.extensions.autodetection.enabled</name>
-                            <value>true</value>
-                        </property>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemProperties>
+                    <properties>
+                        <configurationParameters>
+                            junit.jupiter.extensions.autodetection.enabled = true
+                        </configurationParameters>
+                    </properties>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure.maven.version}</version>
             </plugin>
         </plugins>
         <resources>
@@ -88,13 +87,21 @@
         </resources>
     </build>
 
-    <!-- Allure reporting config in parent-->
     <reporting>
         <excludeDefaults>true</excludeDefaults>
         <plugins>
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
+                <version>LATEST</version>
+                <configuration>
+                    <properties>
+                        <allure.results.directory>target/allure-results</allure.results.directory>
+                    </properties>
+                    <properties>
+                        <allure.link.issue.pattern>https://example.org/issue/{}</allure.link.issue.pattern>
+                    </properties>
+                </configuration>
             </plugin>
         </plugins>
     </reporting>

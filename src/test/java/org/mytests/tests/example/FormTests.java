@@ -2,7 +2,6 @@ package org.mytests.tests.example;
 
 import com.epam.jdi.light.elements.composite.Form;
 import org.junit.jupiter.api.Test;
-import org.mytests.tests.TestsInit;
 import org.mytests.uiobjects.example.entities.Contacts;
 
 import static org.mytests.tests.states.States.shouldBeLoggedIn;
@@ -12,7 +11,7 @@ import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_USER;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
 import static org.mytests.uiobjects.example.site.pages.ContactFormPage.contactForm;
 
-class FormTests extends TestsInit {
+class FormTests {
 
     @Test
     void loginTest() {

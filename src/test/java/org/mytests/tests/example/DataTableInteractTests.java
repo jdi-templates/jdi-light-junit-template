@@ -2,7 +2,6 @@ package org.mytests.tests.example;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mytests.tests.TestsInit;
 import org.mytests.uiobjects.example.custom.MarvelUser;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import static org.mytests.tests.states.States.shouldBeLoggedIn;
 import static org.mytests.uiobjects.example.site.SiteJdi.usersPage;
 import static org.mytests.uiobjects.example.site.pages.UsersPage.*;
 
-class DataTableInteractTests extends TestsInit {
+class DataTableInteractTests {
 
     @BeforeEach
     void before() {
@@ -26,16 +25,19 @@ class DataTableInteractTests extends TestsInit {
         MarvelUser line = users.line(2);
         validateUserRow(line);
     }
+
     @Test
     void lineByNameTest() {
         MarvelUser line = usersSetup.line("Sergey Ivan");
         validateUserRow(line);
     }
+
     @Test
     void lineFilterTest() {
         MarvelUser line = users.line(d -> d.user.contains("Ivan"));
         validateUserRow(line);
     }
+
     @Test
     void linesFilterTest() {
         List<MarvelUser> filteredData = users.lines(d -> d.user.contains("Ivan"));

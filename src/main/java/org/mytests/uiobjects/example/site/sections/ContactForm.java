@@ -17,12 +17,12 @@ public class ContactForm extends Form<Contacts> {
 	TextField name, lastName, position, passportNumber, passportSeria;
 
 	DropdownSelect gender;
-	IsCombobox religion;
 	MultiDropdown weather;
 
 	Checkbox passport, acceptConditions;
 	TextArea description;
 
+	//jdi will find [type=submit] element in this context automatically
 	//@UI("['Submit']") public Button submit;
 
 	@Override

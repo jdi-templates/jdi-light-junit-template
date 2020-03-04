@@ -1,14 +1,13 @@
 package org.mytests.tests.example;
 
 import org.junit.jupiter.api.Test;
-import org.mytests.tests.TestsInit;
 import org.mytests.tests.states.States;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mytests.uiobjects.example.entities.LeftMenuData.*;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
 
-class MenuTests extends TestsInit {
+class MenuTests {
 
     @Test
     void menuTest() {
@@ -19,6 +18,7 @@ class MenuTests extends TestsInit {
         leftMenu.select(ElementsPacks, HTML5);
         html5Page.checkOpened();
     }
+
     @Test
     void customMenuTest() {
         States.shouldBeLoggedIn();

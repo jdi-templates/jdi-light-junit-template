@@ -21,9 +21,9 @@ import static com.epam.jdi.light.logger.LogLevels.DEBUG;
 import static com.epam.jdi.tools.EnumUtils.getEnumValues;
 import static com.epam.jdi.tools.LinqUtils.*;
 import static java.util.Arrays.asList;
-import static org.jsoup.helper.StringUtil.isBlank;
+import static org.jsoup.internal.StringUtil.isBlank;
 
-public class MultiDropdown extends UIListBase<UISelectAssert>
+public class MultiDropdown extends UIListBase<UISelectAssert<?, ?>>
         implements ICoreElement, HasLabel {
 
     By expandArrow = By.cssSelector(".caret");
@@ -81,7 +81,7 @@ public class MultiDropdown extends UIListBase<UISelectAssert>
         if (isBlank(names)) return;
         check(names.split(","));
     }
-    
+
     /**
      * Selects only particular elements
      * @param names String var arg, elements with text to select

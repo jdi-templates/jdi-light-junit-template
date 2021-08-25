@@ -11,7 +11,7 @@ import static org.mytests.uiobjects.example.entities.Defaults.DEFAULT_USER;
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
 import static org.mytests.uiobjects.example.site.pages.ContactFormPage.contactForm;
 
-class FormTests {
+class FormTests extends BaseTest{
 
     @Test
     void loginTest() {

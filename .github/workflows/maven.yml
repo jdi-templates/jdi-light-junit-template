@@ -13,18 +13,25 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Tests on JDK
+    runs-on: ubuntu-18.04
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        java: [ 8, 9, 10, 11, 12, 13, 14, 15 ]  # doesn't work on 16
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 1.8
+      - name: Set up JDK ${{ matrix.java }}
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
+          java-version: ${{ matrix.java }}
+          java-package: jdk
 
-      - name: Build with Maven
-        id: build
-        run: mvn compile
+#      - name: Build with Maven
+#        id: build
+#        run: mvn compile
 
       - name: Get Allure history
         uses: actions/checkout@v2
@@ -36,9 +43,10 @@ jobs:
           path: gh-pages
 
       - name: Tests
+        id: ftests
         timeout-minutes: 10
         continue-on-error: true
-        run: mvn clean test
+        run: mvn test
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master
@@ -54,11 +62,10 @@ jobs:
           name: Allure report
           path: ./target/site
 
-      - name: Deploy report to Github Pages
+      - name: Deploy Allure report to Github Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-        

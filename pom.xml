@@ -27,11 +27,6 @@
             <version>${jdi.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>27.1-jre</version>
-        </dependency>
-        <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>${allure.version}</version>
@@ -71,7 +66,7 @@
                     </systemProperties>
                     <properties>
                         <configurationParameters>
-                            junit.jupiter.extensions.autodetection.enabled = true
+<!--                            junit.jupiter.extensions.autodetection.enabled = true-->
                         </configurationParameters>
                     </properties>
                 </configuration>
@@ -88,7 +83,7 @@
                 <directory>${project.basedir}/src/main/resources</directory>
             </resource>
             <resource>
-                <directory>src/test/resources</directory>
+                <directory>${project.basedir}/src/test/resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
@@ -103,7 +98,7 @@
                 <version>LATEST</version>
                 <configuration>
                     <properties>
-                        <allure.results.directory>target/allure-results</allure.results.directory>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </properties>
                     <properties>
                         <allure.link.issue.pattern>https://example.org/issue/{}</allure.link.issue.pattern>

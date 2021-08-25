@@ -3,6 +3,7 @@ package org.mytests.tests.states;
 import com.epam.jdi.light.elements.composite.WebPage;
 import io.qameta.allure.Step;
 import org.mytests.uiobjects.example.entities.User;
+import org.mytests.uiobjects.example.site.SiteJdi;
 
 import static org.mytests.uiobjects.example.site.SiteJdi.*;
 
@@ -14,17 +15,20 @@ public class States {
         if (!WebPage.getUrl().contains("https://jdi-testing.github.io/jdi-light/"))
             homePage.open();
     }
+
     @Step
     public static void shouldBeLoggedIn() {
         onSite();
         if (!userName.isDisplayed())
             login();
     }
+
     @Step
     public static void login() {
         userIcon.click();
-        loginForm.submit(new User(), "enter");
+        loginForm.submit(new User());
     }
+
     @Step
     public static void shouldBeLoggedOut() {
         onSite();
@@ -33,6 +37,7 @@ public class States {
         if (loginForm.isDisplayed())
             userIcon.click();
     }
+
     @Step
     public static void logout() {
         if (!logout.isDisplayed())

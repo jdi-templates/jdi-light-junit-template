@@ -29,9 +29,9 @@ jobs:
           java-version: ${{ matrix.java }}
           java-package: jdk
 
-#      - name: Build with Maven
-#        id: build
-#        run: mvn compile
+      - name: Build with Maven
+        id: build
+        run: mvn compile
 
       - name: Get Allure history
         uses: actions/checkout@v2

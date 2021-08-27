@@ -31,7 +31,7 @@ jobs:
 
       - name: Build with Maven
         id: build
-        run: mvn compile
+        run: mvn install -DskipTests
 
       - name: Get Allure history
         uses: actions/checkout@v2
@@ -46,7 +46,7 @@ jobs:
         id: ftests
         timeout-minutes: 10
         continue-on-error: true
-        run: mvn test
+        run: mvn test -ntp
 
       - name: Allure Report action from marketplace
         uses: simple-elf/allure-report-action@master

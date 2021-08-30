@@ -1,0 +1,820 @@
+{
+  "uid" : "381f1753b28c25e0",
+  "name" : "hugeTableSearchTest()",
+  "fullName" : "org.mytests.tests.example.JDIPerformanceTests.hugeTableSearchTest",
+  "historyId" : "59096601c6fabdc8bb7e05d87c194e39",
+  "time" : {
+    "start" : 1630346759356,
+    "stop" : 1630346780873,
+    "duration" : 21517
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Open 'SiteJdi'(url=https://jdi-testing.github.io/jdi-light/)",
+      "time" : {
+        "start" : 1630346760039,
+        "stop" : 1630346766585,
+        "duration" : 6546
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Open 'SiteJdi'(url=https://jdi-testing.github.io/jdi-light/)",
+        "time" : {
+          "start" : 1630346763192,
+          "stop" : 1630346766584,
+          "duration" : 3392
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ {
+        "uid" : "c8e93ab49f7a0abf",
+        "name" : "Details",
+        "source" : "c8e93ab49f7a0abf.html",
+        "type" : "text/plain",
+        "size" : 145
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Click on 'User Icon'",
+      "time" : {
+        "start" : 1630346766990,
+        "stop" : 1630346768223,
+        "duration" : 1233
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Click on 'User Icon'",
+        "time" : {
+          "start" : 1630346767025,
+          "stop" : 1630346768223,
+          "duration" : 1198
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Check that 'User Icon' is disabled",
+          "time" : {
+            "start" : 1630346767061,
+            "stop" : 1630346767932,
+            "duration" : 871
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ {
+            "uid" : "ba394f6d3497e409",
+            "name" : "Actual result",
+            "source" : "ba394f6d3497e409.html",
+            "type" : "text/plain",
+            "size" : 5
+          } ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 1,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "3b595f24a77f50cd",
+        "name" : "Details",
+        "source" : "3b595f24a77f50cd.html",
+        "type" : "text/plain",
+        "size" : 38
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Fill 'Login Form' with User(name:Roman; password:Jdi1234) and press 'enter'",
+      "time" : {
+        "start" : 1630346768224,
+        "stop" : 1630346771628,
+        "duration" : 3404
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Input 'Roman' in 'Name'",
+        "time" : {
+          "start" : 1630346768232,
+          "stop" : 1630346769104,
+          "duration" : 872
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Input 'Jdi1234' in 'Password'",
+        "time" : {
+          "start" : 1630346769107,
+          "stop" : 1630346770020,
+          "duration" : 913
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Submit 'Login Form' and press 'enter' button",
+        "time" : {
+          "start" : 1630346770021,
+          "stop" : 1630346771628,
+          "duration" : 1607
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Click on 'enter'",
+          "time" : {
+            "start" : 1630346770027,
+            "stop" : 1630346771628,
+            "duration" : 1601
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Check that 'enter' is disabled",
+            "time" : {
+              "start" : 1630346770034,
+              "stop" : 1630346771116,
+              "duration" : 1082
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ {
+              "uid" : "160ffc62c272af8c",
+              "name" : "Actual result",
+              "source" : "160ffc62c272af8c.html",
+              "type" : "text/plain",
+              "size" : 5
+            } ],
+            "parameters" : [ ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 1,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 1,
+          "attachmentsCount" : 1,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "b951c5c611526fcb",
+        "name" : "Details",
+        "source" : "b951c5c611526fcb.html",
+        "type" : "text/plain",
+        "size" : 37
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "'Performance Page'(url=https://jdi-testing.github.io/jdi-light/performance.html) should be opened",
+      "time" : {
+        "start" : 1630346771629,
+        "stop" : 1630346772756,
+        "duration" : 1127
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "'Performance Page'(url=https://jdi-testing.github.io/jdi-light/performance.html) should be opened",
+        "time" : {
+          "start" : 1630346771635,
+          "stop" : 1630346772756,
+          "duration" : 1121
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Open 'Performance Page'(url=https://jdi-testing.github.io/jdi-light/performance.html)",
+          "time" : {
+            "start" : 1630346771648,
+            "stop" : 1630346772732,
+            "duration" : 1084
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Check that 'Performance Page' is opened (url CONTAINS '/performance.html'; title NONE '')",
+          "time" : {
+            "start" : 1630346772733,
+            "stop" : 1630346772756,
+            "duration" : 23
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "4e17d34dd86f6f6d",
+        "name" : "Details",
+        "source" : "4e17d34dd86f6f6d.html",
+        "type" : "text/plain",
+        "size" : 138
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert that 'Users Table' has at least one row that '[contains 'Meyer' in column 'Name', contains 'co.uk' in column 'Email']'",
+      "time" : {
+        "start" : 1630346773490,
+        "stop" : 1630346775839,
+        "duration" : 2349
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Get 'Users Table' header",
+        "time" : {
+          "start" : 1630346773516,
+          "stop" : 1630346775128,
+          "duration" : 1612
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Get 'Users Table header' values",
+          "time" : {
+            "start" : 1630346774198,
+            "stop" : 1630346775128,
+            "duration" : 930
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Get '' text",
+            "time" : {
+              "start" : 1630346774910,
+              "stop" : 1630346774957,
+              "duration" : 47
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ {
+              "uid" : "358be7877523deab",
+              "name" : "Actual result",
+              "source" : "358be7877523deab.html",
+              "type" : "text/plain",
+              "size" : 4
+            } ],
+            "parameters" : [ ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 1,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ {
+            "uid" : "3a456b14377146d8",
+            "name" : "Actual result",
+            "source" : "3a456b14377146d8.html",
+            "type" : "text/plain",
+            "size" : 26
+          } ],
+          "parameters" : [ ],
+          "stepsCount" : 1,
+          "attachmentsCount" : 2,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "185b20e5955e71d6",
+          "name" : "Actual result",
+          "source" : "185b20e5955e71d6.html",
+          "type" : "text/plain",
+          "size" : 26
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 3,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "15159db757779824",
+        "name" : "Details",
+        "source" : "15159db757779824.html",
+        "type" : "text/plain",
+        "size" : 51
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 4,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Assert that 'Users Table' has at least '[has 'NO_NAME' in column 'Name', has 'wrong.email' in column 'Email']' rows that [has 'NO_NAME' in column 'Name', has 'wrong.email' in column 'Email']",
+      "time" : {
+        "start" : 1630346775840,
+        "stop" : 1630346778666,
+        "duration" : 2826
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Get 'Users Table' header",
+        "time" : {
+          "start" : 1630346775850,
+          "stop" : 1630346777277,
+          "duration" : 1427
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Get 'Users Table header' values",
+          "time" : {
+            "start" : 1630346776421,
+            "stop" : 1630346777276,
+            "duration" : 855
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Get '' text",
+            "time" : {
+              "start" : 1630346777106,
+              "stop" : 1630346777141,
+              "duration" : 35
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ {
+              "uid" : "ebc9cf0c5a1216fd",
+              "name" : "Actual result",
+              "source" : "ebc9cf0c5a1216fd.html",
+              "type" : "text/plain",
+              "size" : 4
+            } ],
+            "parameters" : [ ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 1,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ {
+            "uid" : "117eabff4f79eb3f",
+            "name" : "Actual result",
+            "source" : "117eabff4f79eb3f.html",
+            "type" : "text/plain",
+            "size" : 26
+          } ],
+          "parameters" : [ ],
+          "stepsCount" : 1,
+          "attachmentsCount" : 2,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ {
+          "uid" : "7a2ae1d371fe57c4",
+          "name" : "Actual result",
+          "source" : "7a2ae1d371fe57c4.html",
+          "type" : "text/plain",
+          "size" : 26
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 3,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "c81fbfcd9ba75472",
+        "name" : "Actual result",
+        "source" : "c81fbfcd9ba75472.html",
+        "type" : "text/plain",
+        "size" : 51
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 4,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Get first 'Users Table' table row that match criteria",
+      "time" : {
+        "start" : 1630346778686,
+        "stop" : 1630346780792,
+        "duration" : 2106
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Get 'Users Table' header",
+        "time" : {
+          "start" : 1630346778732,
+          "stop" : 1630346778734,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "114f787fd00ebaf8",
+          "name" : "Actual result",
+          "source" : "114f787fd00ebaf8.html",
+          "type" : "text/plain",
+          "size" : 26
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Get 'Matcher: contains 'Meyer' in column 'Name',contains 'co.uk' in column 'Email'[2]' text",
+        "time" : {
+          "start" : 1630346779379,
+          "stop" : 1630346779696,
+          "duration" : 317
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "1de1b649133b03db",
+          "name" : "Actual result",
+          "source" : "1de1b649133b03db.html",
+          "type" : "text/plain",
+          "size" : 11
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Get 'Matcher: contains 'Meyer' in column 'Name',contains 'co.uk' in column 'Email'[3]' text",
+        "time" : {
+          "start" : 1630346779708,
+          "stop" : 1630346780048,
+          "duration" : 340
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "7b678e1cea115c47",
+          "name" : "Actual result",
+          "source" : "7b678e1cea115c47.html",
+          "type" : "text/plain",
+          "size" : 13
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Get 'Matcher: contains 'Meyer' in column 'Name',contains 'co.uk' in column 'Email'[4]' text",
+        "time" : {
+          "start" : 1630346780074,
+          "stop" : 1630346780400,
+          "duration" : 326
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "d67ebd88f50e6dce",
+          "name" : "Actual result",
+          "source" : "d67ebd88f50e6dce.html",
+          "type" : "text/plain",
+          "size" : 34
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Get 'Matcher: contains 'Meyer' in column 'Name',contains 'co.uk' in column 'Email'[5]' text",
+        "time" : {
+          "start" : 1630346780410,
+          "stop" : 1630346780769,
+          "duration" : 359
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ {
+          "uid" : "988227f03093da11",
+          "name" : "Actual result",
+          "source" : "988227f03093da11.html",
+          "type" : "text/plain",
+          "size" : 7
+        } ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 1,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ {
+        "uid" : "b4b8bb15098005d7",
+        "name" : "Details",
+        "source" : "b4b8bb15098005d7.html",
+        "type" : "text/plain",
+        "size" : 51
+      }, {
+        "uid" : "c3444eff868e91c1",
+        "name" : "Actual result",
+        "source" : "c3444eff868e91c1.html",
+        "type" : "text/plain",
+        "size" : 90
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 7,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 29,
+    "attachmentsCount" : 21,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "host",
+    "value" : "fv-az174-438"
+  }, {
+    "name" : "thread",
+    "value" : "3999@fv-az174-438.ForkJoinPool-1-worker-7(16)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "org.mytests.tests.example.JDIPerformanceTests"
+  }, {
+    "name" : "testClass",
+    "value" : "org.mytests.tests.example.JDIPerformanceTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "hugeTableSearchTest"
+  }, {
+    "name" : "suite",
+    "value" : "org.mytests.tests.example.JDIPerformanceTests"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 24,
+        "unknown" : 0,
+        "total" : 24
+      },
+      "items" : [ {
+        "uid" : "9cd083548dda3e02",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/9//#testresult/9cd083548dda3e02",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630346465087,
+          "stop" : 1630346491381,
+          "duration" : 26294
+        }
+      }, {
+        "uid" : "3c02b778cbce82bf",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/9//#testresult/3c02b778cbce82bf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630346171633,
+          "stop" : 1630346192534,
+          "duration" : 20901
+        }
+      }, {
+        "uid" : "8c6f3cf36fd148f5",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/9//#testresult/8c6f3cf36fd148f5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630345907803,
+          "stop" : 1630345931001,
+          "duration" : 23198
+        }
+      }, {
+        "uid" : "a1391242e82a19c9",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/8//#testresult/a1391242e82a19c9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630345623650,
+          "stop" : 1630345646631,
+          "duration" : 22981
+        }
+      }, {
+        "uid" : "6f1a8b67b4757c3a",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/9//#testresult/6f1a8b67b4757c3a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630345358897,
+          "stop" : 1630345379289,
+          "duration" : 20392
+        }
+      }, {
+        "uid" : "3bea9b2de3a10dda",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/8//#testresult/3bea9b2de3a10dda",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630345130444,
+          "stop" : 1630345152496,
+          "duration" : 22052
+        }
+      }, {
+        "uid" : "a413d158a25c0f34",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/8//#testresult/a413d158a25c0f34",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630344872532,
+          "stop" : 1630344896571,
+          "duration" : 24039
+        }
+      }, {
+        "uid" : "b0e141c7b0ca7ae9",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/7//#testresult/b0e141c7b0ca7ae9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630342503622,
+          "stop" : 1630342524905,
+          "duration" : 21283
+        }
+      }, {
+        "uid" : "1808517925aa07b0",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/7//#testresult/1808517925aa07b0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630342233942,
+          "stop" : 1630342254682,
+          "duration" : 20740
+        }
+      }, {
+        "uid" : "b082cdb9242578bc",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/7//#testresult/b082cdb9242578bc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630341938912,
+          "stop" : 1630341963818,
+          "duration" : 24906
+        }
+      }, {
+        "uid" : "60c2bbce48e7abe7",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/7//#testresult/60c2bbce48e7abe7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630341679689,
+          "stop" : 1630341704719,
+          "duration" : 25030
+        }
+      }, {
+        "uid" : "c9005b0a4929df78",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/7//#testresult/c9005b0a4929df78",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630341450845,
+          "stop" : 1630341469514,
+          "duration" : 18669
+        }
+      }, {
+        "uid" : "4d1876d08e6af8e6",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/7//#testresult/4d1876d08e6af8e6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630341213010,
+          "stop" : 1630341232561,
+          "duration" : 19551
+        }
+      }, {
+        "uid" : "40debe61e8cd7dbd",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/7//#testresult/40debe61e8cd7dbd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630340955001,
+          "stop" : 1630340976849,
+          "duration" : 21848
+        }
+      }, {
+        "uid" : "a85c180d88e7226f",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/7//#testresult/a85c180d88e7226f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630340668947,
+          "stop" : 1630340696043,
+          "duration" : 27096
+        }
+      }, {
+        "uid" : "a8314213ce87b68f",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/6//#testresult/a8314213ce87b68f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630337246821,
+          "stop" : 1630337253103,
+          "duration" : 6282
+        }
+      }, {
+        "uid" : "e9b26dfa49f7a40d",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/6//#testresult/e9b26dfa49f7a40d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630336936559,
+          "stop" : 1630336941213,
+          "duration" : 4654
+        }
+      }, {
+        "uid" : "ff5ec744e95e2e31",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/6//#testresult/ff5ec744e95e2e31",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630336605323,
+          "stop" : 1630336610151,
+          "duration" : 4828
+        }
+      }, {
+        "uid" : "8e49cf7401ecc8c8",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/6//#testresult/8e49cf7401ecc8c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630336288930,
+          "stop" : 1630336295487,
+          "duration" : 6557
+        }
+      }, {
+        "uid" : "4fd1748179dbc202",
+        "reportUrl" : "https://jdi-templates.github.io/jdi-light-junit-template/6//#testresult/4fd1748179dbc202",
+        "status" : "passed",
+        "time" : {
+          "start" : 1630335957522,
+          "stop" : 1630335966815,
+          "duration" : 9293
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "381f1753b28c25e0.json",
+  "parameterValues" : [ ]
+}

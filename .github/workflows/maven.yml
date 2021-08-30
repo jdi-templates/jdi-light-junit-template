@@ -31,7 +31,7 @@ jobs:
 
       - name: Build with Maven
         id: build
-        run: mvn install -DskipTests
+        run: mvn install -DskipTests -ntp
 
       - name: Get Allure history
         uses: actions/checkout@v2

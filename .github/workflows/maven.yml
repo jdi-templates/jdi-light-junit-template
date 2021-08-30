@@ -45,7 +45,6 @@ jobs:
       - name: Tests
         id: ftests
         timeout-minutes: 10
-        continue-on-error: true
         run: mvn test -Pci -ntp
 
       - name: Allure Report action from marketplace

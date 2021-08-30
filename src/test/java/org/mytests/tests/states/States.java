@@ -26,7 +26,7 @@ public class States {
     @Step
     public static void login() {
         userIcon.click();
-        loginForm.submit(new User());
+        loginForm.submit(new User(), "enter");
     }
 
     @Step

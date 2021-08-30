@@ -6,8 +6,6 @@ import com.epam.jdi.light.elements.complex.Menu;
 import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
-import com.epam.jdi.light.ui.html.elements.common.Button;
-import com.epam.jdi.light.ui.html.elements.common.TextField;
 import org.mytests.uiobjects.example.entities.User;
 import org.mytests.uiobjects.example.site.custom.MenuItem;
 import org.mytests.uiobjects.example.site.pages.*;
@@ -23,7 +21,7 @@ public class SiteJdi {
     public static Html5Page html5Page;
     public static UsersPage usersPage;
     @Css("#login-form")
-    public static Form<User> loginForm = new LoginForm();
+    public static Form<User> loginForm;
 
     @Css(".profile-photo [ui=label]")
     public static UIElement userName;
@@ -35,21 +33,4 @@ public class SiteJdi {
     public static Menu leftMenu;
     @UI(".sidebar-menu li")
     public static JList<MenuItem> menu;
-
-    // temporary solution to make tests working
-    public static class LoginForm extends Form<User> {
-        @UI("#name")
-        TextField name;
-        @UI("#password")
-        TextField password;
-        @UI("#login-button")
-        Button loginButton;
-
-        @Override
-        public void submit(User entity) {
-            name.setValue(entity.name);
-            password.setValue(entity.password);
-            loginButton.click();
-        }
-    }
 }

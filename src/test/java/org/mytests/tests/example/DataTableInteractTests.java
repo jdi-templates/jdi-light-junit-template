@@ -25,7 +25,6 @@ class DataTableInteractTests extends BaseTest{
     void lineByIndexTest() {
         MarvelUser line = users.line(2);
         validateUserRow(line);
-        fail("test CI");
     }
 
     @Test

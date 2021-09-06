@@ -23,7 +23,7 @@ import static org.mytests.tests.test.data.MarvelHeroes.SPIDER_MAN;
 import static org.mytests.uiobjects.example.site.SiteJdi.usersPage;
 import static org.mytests.uiobjects.example.site.pages.UsersPage.*;
 
-class DataTableTests {
+class DataTableTests extends BaseTest{
     private boolean firstTime = true;
 
     @BeforeEach

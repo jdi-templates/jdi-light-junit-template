@@ -23,7 +23,7 @@
 
     <Console name="ColoredConsoleAppender" target="SYSTEM_OUT" follow="true">
       <PatternLayout
-              pattern="[%highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=blue} %d{mm:ss.SSS}] : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%throwable}"/>
+              pattern="%d{HH:mm:ss.SSS} [%t] %highlight{${LOG_LEVEL_PATTERN:-%5p}}{FATAL=red blink, ERROR=red, WARN=yellow bold, INFO=green, DEBUG=green bold, TRACE=blue} %logger{6} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%throwable}"/>
     </Console>
 
     <RollingFile name="fileAppender" fileName="${baseDir}/${logFileName}.log">

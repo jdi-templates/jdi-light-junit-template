@@ -1,6 +1,5 @@
 package org.mytests.tests.example.extensions;
 
-import com.epam.jdi.light.driver.WebDriverFactory;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
@@ -12,8 +11,6 @@ import java.lang.reflect.Method;
 
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
 import static com.epam.jdi.light.elements.composite.WebPage.openSite;
-import static com.epam.jdi.light.elements.init.PageFactory.initSite;
-import static com.epam.jdi.light.settings.WebSettings.TEST_GROUP;
 import static com.epam.jdi.light.settings.WebSettings.TEST_NAME;
 import static com.epam.jdi.light.settings.WebSettings.logger;
 import static io.qameta.allure.model.Status.FAILED;
@@ -27,8 +24,7 @@ public class JDISetupExtension implements
     public void beforeAll(ExtensionContext extensionContext) {
         extensionContext.getRoot().getStore(ExtensionContext.Namespace.GLOBAL)
                 .getOrComputeIfAbsent(DriverKiller.class);
-        WebDriverFactory.getDriver("chrome");
-        initSite(SiteJdi.class);
+        openSite(SiteJdi.class);
         homePage.open();
         logger.info("Run Tests");
     }

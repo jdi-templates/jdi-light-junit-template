@@ -3,8 +3,6 @@ package org.mytests.tests.example;
 import com.epam.jdi.light.elements.complex.table.Single;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mytests.tests.example.extensions.JDISetupExtension;
 import org.mytests.uiobjects.example.entities.MarvelUserInfo;
 
 import java.util.List;

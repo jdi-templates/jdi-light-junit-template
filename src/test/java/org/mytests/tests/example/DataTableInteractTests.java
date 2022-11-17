@@ -8,7 +8,6 @@ import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 import static org.mytests.tests.states.States.shouldBeLoggedIn;
 import static org.mytests.uiobjects.example.site.SiteJdi.usersPage;
 import static org.mytests.uiobjects.example.site.pages.UsersPage.*;

@@ -14,7 +14,7 @@
         <driver>chrome</driver>
         <domain>https://jdi-testing.github.io/jdi-light/</domain>
         <java.version>1.8</java.version>
-        <jdi.version>1.4.5</jdi.version>
+<!--        <jdi.version>1.4.5</jdi.version>-->
         <allure.version>2.19.0</allure.version>
         <allure.maven.version>2.10.0</allure.maven.version>
         <surfire.version>3.0.0-M4</surfire.version>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.epam.jdi</groupId>
             <artifactId>jdi-light-html</artifactId>
-            <version>${jdi.version}</version>
+            <version>LATEST</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -81,6 +81,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-1.2-api</artifactId>
             <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

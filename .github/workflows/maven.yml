@@ -1,15 +1,19 @@
-# This workflow will build a Java project with Maven
-# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
-
-name: Java CI with Maven
+name: Run tests
 env:
   ALLURE_VERSION: "2.10.0"
+  SUREFIRE_ARGS: "--add-opens java.base/java.lang=ALL-UNNAMED"
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+
   pull_request:
-    branches: [ master ]
+    branches:
+      - master
+  release:
+    types: # This configuration does not affect the page_build event above
+      - created
   repository_dispatch:
     types:
       - webhook
@@ -17,60 +21,51 @@ on:
 jobs:
   build:
     name: Tests on JDK
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
-        java: [ 8, 11, 17 ]
+        java: [ 8, 11, 13, 14, 15, 17, 18 ]
 
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK ${{ matrix.java }}
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3
         with:
           java-version: ${{ matrix.java }}
+          distribution: 'zulu'
           java-package: jdk
+          cache: 'maven'
+
+      - name: Set parameters for AspectJ
+        id: aspect_j_params
+        if: ${{ matrix.java > 15 }}
+        run: |
+          echo "ASPECT_ARGS=-Daspectj.args="\"$SUREFIRE_ARGS\" >> $GITHUB_ENV
+
+      - name: Set parameters for AspectJ
+        id: aspect_j_params_empty
+        if: ${{ matrix.java < 16 }}
+        run: |
+          echo "ASPECT_ARGS=-Daspectj.args=''" >> $GITHUB_ENV
 
       - name: Build with Maven
         id: build
-        run: mvn install -DskipTests -ntp
-
-      - name: Get Allure history
-        uses: actions/checkout@v3
-        id: allure-setup
-        if: steps.build.outcome == 'success'
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
+        run: mvn clean install -DskipTests -ntp
 
       - name: Tests
         id: functests
         timeout-minutes: 15
-        run: mvn test -Pci -ntp
+        continue-on-error: true
+        run: mvn test -ntp ${{ env.ASPECT_ARGS }} --fail-at-end
 
-      - name: Allure Report action from marketplace
+      - name: Generate Allure report
         uses: simple-elf/allure-report-action@master
-        if: always()
         with:
           allure_results: target/allure-results
+          allure_report: target/allure-report
           allure_history: allure-history
-
-      - name: Upload Allure report
-        uses: actions/upload-artifact@master
-        if: github.event_name == 'pull_request' && failure()
-        with:
-          name: Allure report
-          path: ./target/site
-
-      - name: Deploy Allure report to Github Pages
-        if: always()
-        uses: peaceiris/actions-gh-pages@v2
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: allure-history
 
       - name: Check tests are passed
         if: ${{ steps.functests.outcome != 'success' }}

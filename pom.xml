@@ -13,14 +13,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <driver>chrome</driver>
         <domain>https://jdi-testing.github.io/jdi-light/</domain>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
 <!--        <jdi.version>1.4.5</jdi.version>-->
-        <allure.version>2.19.0</allure.version>
-        <allure.maven.version>2.10.0</allure.maven.version>
+        <allure.version>2.24.0</allure.version>
+        <allure.maven.version>2.12.0</allure.maven.version>
         <surfire.version>3.0.0-M4</surfire.version>
         <jupiter.parallel>false</jupiter.parallel>
         <jupiter.parallel.threads/>
-        <log4j2.version>2.17.1</log4j2.version>
     </properties>
 
     <profiles>
@@ -34,6 +33,15 @@
                 <jupiter.parallel.threads>5</jupiter.parallel.threads>
             </properties>
         </profile>
+        <profile>
+            <id>jdk16</id>
+            <activation>
+                <jdk>[16, 20]</jdk>
+            </activation>
+            <properties>
+                <aspectj.args>--add-opens java.base/java.lang=ALL-UNNAMED</aspectj.args>
+            </properties>
+        </profile>     
     </profiles>
 
     <dependencies>
@@ -61,27 +69,6 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Any logger can be used -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>${log4j2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>${log4j2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-slf4j-impl</artifactId>
-            <version>${log4j2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-1.2-api</artifactId>
-            <version>${log4j2.version}</version>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
